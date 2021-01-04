@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="notiflix.css">
+    <style>
+        button{
+            background-color: transparent;
+            padding: 4px 6px;
+            border: 1px solid blue;
+            outline: none;
+            border-radius: 3px;
+
+        }
+    </style>
+    <title>Notiflix</title>
+</head>
+<body>
+    
+    <button onclick="goster();">Sil</button>
+    <script src="notiflix.js"></script>
+    <script>
+        function goster(){
+            Notiflix.Confirm.Show(
+             'Onay Ekranı',
+            'Silmek İstediğinize Emin Misiniz?', 
+            'Evet', 
+            'Hayır',
+             function(){
+                 silmeTrue();
+                }, 
+             function(){
+                 silmeFalse();
+                }
+              ); 
+            }
+
+            function silmeTrue(){
+                Notiflix.Notify.Success('Silme İşlemi Başarılı..');
+            }
+            function silmeFalse(){
+                Notiflix.Notify.Failure('Silme işlemi gerçekleştirilemedi..');
+            }
+    </script>
+</body>
+</html>
